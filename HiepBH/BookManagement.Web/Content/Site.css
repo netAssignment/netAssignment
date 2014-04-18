@@ -1,0 +1,315 @@
+﻿/*  RESET
+    ************************************/
+img {
+	max-width: 100%;
+    border:none;
+}
+
+article, aside, footer, header, nav, section { 
+    display: block;
+}
+
+body {
+	font-size: 62.5%;
+	font-family: sans-serif, helvetica,tahoma, arial;
+}
+
+a {
+	color: #026acb;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/*  MAIN SETTING
+    *************************************/
+#pagewrap {
+	width: 1366px;
+	margin: 0 auto;
+	font-size: 1.3em;
+}
+
+#header {
+	position: relative;
+	height: 180px;
+}
+
+#site-logo {
+	position: absolute;
+	top: 10px;
+	font-size: 2.0em;
+	color: white;
+	text-decoration: none;
+}
+
+/*  Menu
+    *********************************************/
+#main-nav {
+	width: 100%;
+	background: #1570A6;
+	margin-bottom: 10px;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+}
+#main-nav li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	position: relative;
+}
+
+#main-nav a {
+	line-height: 100%;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	padding: 14px 15px;
+	text-decoration: none;
+	font-weight: normal;
+}
+#main-nav a:hover {
+	color: #fff;
+	background: #E81123;
+}
+
+/*  Maincontent
+    ****************************************/
+.maincontent {
+    border:1px solid red;
+	margin-top: 10px;
+	width: 600px;
+	float: right;
+	overflow: hidden;
+
+}
+
+/*  Content
+    ****************************************/
+.content {
+	background: #E3E3E3;
+	margin-top: 10px;
+	width: 600px;
+	float: right;
+	min-height: 200px;
+	overflow: hidden;
+
+}
+
+#type{
+	background: #ED9C28;
+	margin-top: 10px;
+	width: 600px;
+	float: right;
+	color: white;
+	text-align: center;
+}
+.content header h1{
+	margin: 0px 0px 10px 0px;
+}
+
+.content header h3{
+	margin: 0px;
+	font-weight: normal;
+}
+
+.content header h1 a{
+	text-decoration: none;
+	margin: 0px;
+}
+
+.content p{
+	line-height: 1.5em;
+}
+
+.content img{
+	float: left;
+	margin-right: 10px;
+	width: 15%;
+}
+
+/*  Category
+    *********************************************/
+#sidebar {
+	width: 200px;
+	float: left;
+}
+
+.category{
+	background: #EEEEEE;
+}
+
+.widgettitle {
+	margin: 0 0 5px 20px;
+	padding: 0;	
+}
+
+.widget ul {
+	margin: 0;
+	padding: 0;
+}
+
+.widget li {
+	margin: 0px 0px 0px 20px;
+	padding: 6px 0;
+	list-style: none;
+	clear: both;
+	border-top: solid 1px #eee;
+}
+
+.category h4{
+	margin-bottom: 20px;
+}
+
+.category ul li a{
+	color: white;
+	text-decoration: none;
+}
+
+.category ul li a:hover{
+	color: #FCB714;
+	text-decoration: none;
+}
+
+/*  Form Login
+    ********************************************/
+#login{
+	width: 80px;
+}
+
+
+#sidebar form input{
+	margin-bottom: 10px;
+}
+
+#sidebar section.widget.category form input[type="text"], #sidebar form input[type="password"]{
+	width: 150px;
+}
+
+#login{
+    border:none;
+    background:#3276B1;
+    color:white;
+    height:25px;
+}
+
+#login:hover{
+    border:none;
+    background:#ED9C28;
+}
+
+/*  Footer
+    ****************************************************/
+footer {
+	clear: both;
+	font-size: 85%;
+	background: #68217A;
+	margin-top: 10px;
+}
+
+footer h2{
+    color: white;
+    text-align:right;
+    padding-top: 10px;
+    text-align: center;
+}
+footer p{
+    color: white;
+    font-size:1.2em;
+    text-align:center;
+    padding-bottom: 10px;
+}
+
+footer p a{
+    color: white;
+}
+
+.clearfix:after { 
+	display: block; 
+	content: " "; 
+	clear: both; 
+}
+
+
+/*  SET DISPLAY FOR SIZE SCREEN
+    *******************************************************/
+@media screen and (max-width: 1366px) {
+
+	#pagewrap {
+		width: 95%;
+	}
+
+	.content, #type, .maincontent {
+		width: 69%;
+		padding: 1% 1%;
+		margin: 0px 0px 10px 0px;
+	}
+
+	#sidebar {
+		width: 28%;
+	}
+	#sidebar .widget {
+		padding: 8% 7%;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+
+	#header {
+		height: auto;
+	}
+
+	#main-nav {
+		position: static;
+	}
+
+	#site-logo {
+		margin: 15px 100px 5px 0;
+		position: static;
+	}
+
+	.content, #type, .maincontent {
+		width: auto;
+		float: none;
+		margin: 10px 0;
+	}
+
+	#sidebar {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+
+	#sidebar .widget {
+		padding: 3% 4%;
+		margin: 0 0 10px;
+	}
+}
+
+
+
+
+/*  FORMAT FORM
+    ****************************************************************/
+.title{
+    font-weight:normal;
+}
+
+td{
+   padding-right:50px;
+   padding-top:5px;
+}
+th{
+    text-align:left;
+}
+
+.editor-label{
+    margin-top:10px;
+}

@@ -1,0 +1,44 @@
+﻿@Styles.Render("~/Content/css")
+
+@model IEnumerable<BookManagement.Core.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="maincontent">
+    <h2 class="title">Account Management</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UserName }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UserName })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

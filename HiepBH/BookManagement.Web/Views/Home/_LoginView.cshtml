@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "_LoginView";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.Label("User name", new { @class = "hello" })<br/>
+    @Html.TextBox("tbUsername")<br/>
+    @Html.Label("Password")<br/>
+    @Html.TextBox("tbPassword")<br/>
+
+    <input type="submit" name="btLogin" value="Login" id="login" />
+}

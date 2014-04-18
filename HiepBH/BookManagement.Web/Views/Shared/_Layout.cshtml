@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Book Management</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="pagewrap">
+        <header id="header">
+            <a id="site-logo" href="~/Home/Index"><img src="~/images/logofsoft.png" alt="logo"></a>
+            <nav>
+                <ul id="main-nav" class="clearfix">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Info")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Info")</li>
+                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
+                    <li>@Html.ActionLink("Book", "Index", "Book")</li>
+                    <li>@Html.ActionLink("Category", "Index", "Category")</li>
+                </ul>
+
+            </nav>
+        </header>
+        
+        <aside id="sidebar">
+            <section class="widget category">
+                <h4 class="widgettitle">Login</h4>
+                @{Html.RenderAction("_LoginView", "Home");}
+            </section>
+
+            <section class="widget category">
+                <h4 class="widgettitle">Category</h4>
+                @{Html.RenderAction("_CategoriesView", "Home");}
+                </section>
+        </aside>
+
+        @RenderSection("featured", required: false)
+        <div id="maincontent">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <h2>FPT Book Management</h2>
+            <p>
+                Created by: Hiep Bui</br>
+                Email: <a href="">buihuuhiep.uit@gmail.com</a></br>
+                Phone: (+84) 165 304 6757
+            </p>
+        </footer>
+    </div>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=495533187241914";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
+
+
+</html>

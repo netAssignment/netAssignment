@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BookManagement.Core.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="maincontent">
+    <h2 class="title">Categories Management</h2>
+
+    <p>
+        @Html.ActionLink("New Category", "Create")
+    </p>
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

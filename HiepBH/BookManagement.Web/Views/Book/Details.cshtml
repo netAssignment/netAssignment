@@ -1,0 +1,51 @@
+﻿@model BookManagement.Core.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="maincontent">
+    <h2>Details</h2>
+
+    <fieldset>
+        <legend>Book</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Overview)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Overview)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PathImage)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PathImage)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

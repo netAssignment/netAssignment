@@ -1,0 +1,9 @@
+﻿@model IEnumerable<BookManagement.Core.Models.Category>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        @Html.ActionLink(item.Name, "Index", "Home", new { categoryId=item.Id},null)
+        <br/>
+    }
+</ul>

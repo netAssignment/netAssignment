@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Core", "BookManagement.Core\BookManagement.Core.csproj", "{9BA407EA-BF0F-4CB6-92E9-D0AEACABC674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookManagement.Web", "BookManagement.Web\BookManagement.Web.csproj", "{D2C8CFFB-704F-4AA8-BED1-27EFEE5A091F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://buihuuhiep.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BookManagement.Core\\BookManagement.Core.csproj
+		SccProjectName1 = BookManagement.Core
+		SccLocalPath1 = BookManagement.Core
+		SccProjectUniqueName2 = BookManagement.Web\\BookManagement.Web.csproj
+		SccProjectName2 = BookManagement.Web
+		SccLocalPath2 = BookManagement.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BA407EA-BF0F-4CB6-92E9-D0AEACABC674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA407EA-BF0F-4CB6-92E9-D0AEACABC674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA407EA-BF0F-4CB6-92E9-D0AEACABC674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA407EA-BF0F-4CB6-92E9-D0AEACABC674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C8CFFB-704F-4AA8-BED1-27EFEE5A091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C8CFFB-704F-4AA8-BED1-27EFEE5A091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C8CFFB-704F-4AA8-BED1-27EFEE5A091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C8CFFB-704F-4AA8-BED1-27EFEE5A091F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
