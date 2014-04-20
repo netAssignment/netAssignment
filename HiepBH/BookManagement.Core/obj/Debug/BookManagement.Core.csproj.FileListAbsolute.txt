@@ -1,0 +1,6 @@
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\bin\Debug\BookManagement.Core.dll
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\bin\Debug\BookManagement.Core.pdb
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\bin\Debug\EntityFramework.dll
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\bin\Debug\EntityFramework.xml
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\obj\Debug\BookManagement.Core.dll
+D:\GitHub\Assignment\HiepBH\BookManagement.Core\obj\Debug\BookManagement.Core.pdb

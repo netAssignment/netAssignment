@@ -1,0 +1,31 @@
+﻿NEW:
+	cd ~/.ssh
+	ssh-keygen -t rsa -C email
+	nhap pass
+TEST:
+	ssh -T git@github.com
+	git config --global user.name name
+	git config --global user.email email
+
+
+
+CREATE:
+	git init
+	git add Readme.txt
+	git commit -m 'first upload'
+	git remote add hiepbh git@github.com:netAssignment/netAssignment.git
+	git push -u hiepbh master
+	_______________________________________________________________________
+	
+UP:	
+	git status
+	git add
+	_______________________________________________________________________
+BRANCH:
+	git branch
+	git branch newBranch
+	git checkout master
+	
+	git push hiepbh --delete Branch
+	_______________________________________________________________________
+	

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Book Management</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+
+<body>
+    <header id="header">
+        <a href="Home/"><img id="logo" src="~/images/logo.jpg"></a>      
+
+        <form id="form_search">
+            <input type="search" name="" value="" placeholder="search book">
+            <input type="submit" name="btnSearch" value="Search">
+        </form>
+    </header>
+
+    <div id="wrapper">
+        <aside>
+        
+            <p id="Category">Category</p>
+            @{Html.RenderAction("_CategoriesView", "Home");}
+        </aside>
+
+        <div id="maincontent">
+            @RenderBody()
+        </div><!-- #maincontent -->
+    </div>
+
+    <footer>
+        <h2>HiepBH Book Management</h2>
+        <p>
+            Created by: Hiep Bui</br>
+            Email: <a href="">buihuuhiep.uit@gmail.com</a></br>
+            Phone: (+84) 165 304 6757
+        </p>
+        <h2 id="plogin">
+            @Html.ActionLink("Login", "Login", "Account")
+        </h2>
+    </footer>
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=495533187241914";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".SubMenu").hover(function () {
+                /* Stuff to do when the mouse enters the element */
+                $(this).css({
+                    background: '#333333',
+                    cursor: 'pointer'
+                });
+                $("a", this).css({
+                    color: 'white'
+                });
+            }, function () {
+                /* Stuff to do when the mouse leaves the element */
+                $(this).css({
+                    background: 'white',
+                });
+
+                $("a", this).css({
+                    color: 'black'
+                });
+            });
+            /*----------------------------------------*/
+            $("tr").hover(function () {
+                $(".btnEdit", this).css({
+                    color: "white"
+                });
+            }, function () {
+                $(".btnEdit", this).css({
+                    color: "black"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
