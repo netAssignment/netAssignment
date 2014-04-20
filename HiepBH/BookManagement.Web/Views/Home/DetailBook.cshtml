@@ -5,9 +5,16 @@
 
 @model BookManagement.Core.Models.Book
 
-<div class="maincontent">
-    <h2>DetailBook</h2>
-    <h2>@Model.Title</h2>
-    <div class="fb-comments" data-href="localhost:1064" data-colorscheme="light"
-         data-numposts="5" data-width="800"></div>
-</div>
+    <section>
+        <img src="@Model.PathImage">
+        <header>
+            <p class="book_title">@Html.ActionLink(@Model.Title, "DetailBook", "Home", new { bookId = @Model.Id }, null)</p>
+            <p class="book_author">Category: @Model.Category.Name</p>
+            <p class="book_author">Author: @Model.Author</p>
+            <p class="book_price">Price: @Model.Price</p>
+        </header>
+        <p class="book_ov">@Model.Overview</p>
+    </section>
+
+    @*<div class="fb-comments" data-href="localhost:1064" data-colorscheme="light"
+         data-numposts="5" data-width="800"></div>*@

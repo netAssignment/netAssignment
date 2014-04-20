@@ -4,33 +4,29 @@
     ViewBag.Title = "Edit";
 }
 <div class="maincontent">
-    <h2 class="title">Edit</h2>
+    <h2 class="title">Edit Category</h2>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        <fieldset>
-            <legend>Category</legend>
+        @Html.HiddenFor(model => model.Id)
 
-            @Html.HiddenFor(model => model.Id)
+        <div class="editor-label">
+            @Html.Label("Category Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Name)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
-
-            <p>
-                <input type="submit" value="Save" />
-            </p>
-        </fieldset>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
     }
 
-    <div>
+    <div class="button">
         @Html.ActionLink("Back to List", "Index")
     </div>
 </div>

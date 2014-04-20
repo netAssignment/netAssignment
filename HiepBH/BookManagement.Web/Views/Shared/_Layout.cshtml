@@ -7,51 +7,47 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 </head>
+
 <body>
-    <div id="pagewrap">
-        <header id="header">
-            <a id="site-logo" href="~/Home/Index"><img src="~/images/logofsoft.png" alt="logo"></a>
-            <nav>
-                <ul id="main-nav" class="clearfix">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Info")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Info")</li>
-                    <li>@Html.ActionLink("Account", "Index", "Account")</li>
-                    <li>@Html.ActionLink("Book", "Index", "Book")</li>
-                    <li>@Html.ActionLink("Category", "Index", "Category")</li>
-                </ul>
+    <header id="header">
+        <a href="Home/"><img id="logo" src="~/images/logo.jpg"></a>
 
-            </nav>
-        </header>
-        
-        <aside id="sidebar">
-            <section class="widget category">
-                <h4 class="widgettitle">Login</h4>
-                @{Html.RenderAction("_LoginView", "Home");}
-            </section>
+        @Html.ActionLink("Logout", "Logout", "Account", null, new { id = "logout" })
 
-            <section class="widget category">
-                <h4 class="widgettitle">Category</h4>
-                @{Html.RenderAction("_CategoriesView", "Home");}
-                </section>
+        <form id="form_search">
+            <input type="search" name="" value="" placeholder="search book">
+            <input type="submit" name="btnSearch" value="Search">
+        </form>
+    </header>
+
+    <div id="wrapper">
+        <aside>
+            <ul id="Menu">
+                <li id="Home">@Html.ActionLink("Admin", "Index", "Home")</li>
+                <li class="SubMenu">@Html.ActionLink("Book", "Index", "Book")</li>
+                <li class="SubMenu">@Html.ActionLink("Category", "Index", "Category")</li>
+                <li class="SubMenu">@Html.ActionLink("Account", "Index", "Account")</li>
+            </ul>
+            <p id="Category">Category</p>
+            @{Html.RenderAction("_CategoriesView", "Home");}
         </aside>
 
-        @RenderSection("featured", required: false)
         <div id="maincontent">
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
-        </div>
-        <footer>
-            <h2>FPT Book Management</h2>
-            <p>
-                Created by: Hiep Bui</br>
-                Email: <a href="">buihuuhiep.uit@gmail.com</a></br>
-                Phone: (+84) 165 304 6757
-            </p>
-        </footer>
+            @RenderBody()
+        </div><!-- #maincontent -->
     </div>
+
+    <footer>
+        <h2>HiepBH Book Management</h2>
+        <p>
+            Created by: Hiep Bui</br>
+            Email: <a href="">buihuuhiep.uit@gmail.com</a></br>
+            Phone: (+84) 165 304 6757
+        </p>
+    </footer>
+
     <div id="fb-root"></div>
     <script>
         (function (d, s, id) {
@@ -62,7 +58,40 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-</body>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".SubMenu").hover(function () {
+                /* Stuff to do when the mouse enters the element */
+                $(this).css({
+                    background: '#333333',
+                    cursor: 'pointer'
+                });
+                $("a", this).css({
+                    color: 'white'
+                });
+            }, function () {
+                /* Stuff to do when the mouse leaves the element */
+                $(this).css({
+                    background: 'white',
+                });
+
+                $("a", this).css({
+                    color: 'black'
+                });
+            });
+            /*----------------------------------------*/
+            $("tr").hover(function () {
+                $(".btnEdit", this).css({
+                    color: "white"
+                });
+            }, function () {
+                $(".btnEdit", this).css({
+                    color: "black"
+                });
+            });
+        });
+    </script>
+</body>
 
 </html>

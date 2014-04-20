@@ -3,20 +3,18 @@
 
 }
 
-<h3 id="type">@Html.ViewBag.Category</h3>
-
 @model  IEnumerable<BookManagement.Core.Models.Book>
 
 @foreach (var item in Model)
 {
-    <div class="content">
-        <img src="@Html.DisplayFor(modelItem => item.PathImage)">
-        <header>
-            <h1>@Html.ActionLink(item.Title, "DetailBook", "Home", new {bookId = item.Id}, null)</h1>
-            <h3>Author: @Html.DisplayFor(modelItem => item.Author)</h3>
-            <h3>Price: @Html.DisplayFor(modelItem => item.Price)</h3>
-           
-        </header>
-        <p>@Html.DisplayFor(modelItem => item.Overview)</p>
-    </div>
+    <section>
+        <img class="book_image" src="@Html.DisplayFor(modelItem => item.PathImage)"> 
+		<header>
+			<p class="book_title">@Html.ActionLink(item.Title, "DetailBook", "Home", new { bookId = item.Id }, null)</p>
+			<p class="book_author">Category: @item.Category.Name</p>
+			<p class="book_author">Author: @item.Author</p>
+			<p class="book_price">Price: @item.Price</p>
+		</header>
+		<p class="book_overview">@item.Overview</p>
+	</section>
 }

@@ -9,23 +9,25 @@
 <div class="maincontent">
     <h2 class="title">Account Management</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
+    <p class="pNew">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "new" })
     </p>
     <table>
         <tr>
+            <th>No.</th>
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            
+            <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
+                <td></td>
                 <td>
                     @Html.DisplayFor(modelItem => item.UserName)
                 </td>
@@ -33,8 +35,8 @@
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.UserName }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.UserName })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UserName }, new { @class = "btnEdit" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UserName }, new { @class = "btnEdit" })
                 </td>
             </tr>
         }

@@ -10,6 +10,7 @@ using BookManagement.Core.Infrastructure;
 
 namespace BookManagement.Web.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private BookManagementDb db = new BookManagementDb();

@@ -4,47 +4,16 @@
     ViewBag.Title = "Delete";
 }
 <div class="maincontent">
-    <h2>Delete</h2>
+    <p class="title">Delete Book</p>
 
-    <h3>Are you sure you want to delete this?</h3>
-    <fieldset>
-        <legend>Book</legend>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Title)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Title)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Author)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Author)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Price)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Price)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Overview)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Overview)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.PathImage)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.PathImage)
-        </div>
-    </fieldset>
+    <header>
+        <p class="book_title">@Html.ActionLink(@Model.Title, "DetailBook", "Home", new { bookId = @Model.Id }, null)</p>
+        <p class="book_author">Category: <b>@Model.Category.Name</b></p>
+        <p class="book_author">Author: <b>@Model.Author</b></p>
+        <p class="book_price">Price: <b>@Model.Price</b></p>
+    </header>
+        
+    <h4 style="margin-top:10px;">Are you sure you want to delete this?</h4>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()

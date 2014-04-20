@@ -4,24 +4,27 @@
     ViewBag.Title = "Index";
 }
 <div class="maincontent">
-    <h2 class="title">Categories Management</h2>
-
-    <p>
-        @Html.ActionLink("New Category", "Create")
+    <p class="title">Categories</p>
+    
+    <p class="pNew">
+        @Html.ActionLink("New", "Create", null, new { @class = "new" })
     </p>
-    <table>
+
+    <table id="categories">
         @foreach (var item in Model)
         {
             <tr>
+                <td></td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btnEdit" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btnEdit" })
                 </td>
             </tr>
         }
-
     </table>
+
+    
 </div>

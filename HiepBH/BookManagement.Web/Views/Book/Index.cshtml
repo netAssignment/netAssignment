@@ -4,21 +4,23 @@
     ViewBag.Title = "Index";
 }
 <div class="maincontent">
-    <h2 class="title">Index</h2>
+    <h2 class="title">Books</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
+    <p class="pNew">
+        @Html.ActionLink("New", "Create", null, new { @class = "new" })
     </p>
+
     <table>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
+            <th>No.</th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price) ($)
             </th>
             <th></th>
         </tr>
@@ -26,9 +28,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
+                <td></td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
@@ -36,9 +36,12 @@
                     @Html.DisplayFor(modelItem => item.Author)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btnEdit" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btnEdit" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btnEdit" })
                 </td>
             </tr>
         }

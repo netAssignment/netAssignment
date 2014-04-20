@@ -2,8 +2,8 @@
 
 <ul>
     @foreach (var item in Model)
-    {
-        @Html.ActionLink(item.Name, "Index", "Home", new { categoryId=item.Id},null)
-        <br/>
-    }
+{
+    <li class="SubMenu">@Html.ActionLink(item.Name, "Index", "Home", new { categoryId = item.Id }, null)</li>
+
+}
 </ul>

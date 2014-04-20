@@ -3,32 +3,28 @@
 @{
     ViewBag.Title = "Create";
 }
-<div class="maincontent">
-    <h2>Create</h2>
+<div class="maincontent"> 
+    <p class="title">New Category</p>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-        <fieldset>
-            <legend>Category</legend>
+        <div class="editor-label">
+            @Html.Label("Category Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Name)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
-
-            <p>
-                <input type="submit" value="Create" />
-            </p>
-        </fieldset>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
     }
 
-    <div>
+    <div class="button">
         @Html.ActionLink("Back to List", "Index")
     </div>
 </div>

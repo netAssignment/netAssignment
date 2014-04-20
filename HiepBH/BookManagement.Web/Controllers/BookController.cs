@@ -11,6 +11,7 @@ using System.IO;
 
 namespace BookManagement.Web.Controllers
 {
+    [Authorize]
     public class BookController : Controller
     {
         private BookManagementDb db = new BookManagementDb();
@@ -60,7 +61,7 @@ namespace BookManagement.Web.Controllers
                     var path = Path.Combine(Server.MapPath("~/Images"), fileName);
                     PathImage.SaveAs(path);
 
-                    book.PathImage = "Images/" + fileName;
+                    book.PathImage = "/Images/" + fileName;
                 }
 
                 book.Category = db.Categories.Where(c => c.Name == book.Category.Name).ToList()[0];
@@ -76,6 +77,7 @@ namespace BookManagement.Web.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            ViewBag.Categories = db.Categories.ToList();
             Book book = db.Books.Find(id);
             if (book == null)
             {

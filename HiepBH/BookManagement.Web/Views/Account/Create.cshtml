@@ -6,16 +6,13 @@
 }
 
 <div class="maincontent">
-    <h2>Create</h2>
+    <p class="title">New Admin</p>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
-
-        <fieldset>
-            <legend>Account</legend>
-
+        
             <div class="editor-label">
                 @Html.LabelFor(model => model.UserName)
             </div>
@@ -35,10 +32,9 @@
             <p>
                 <input type="submit" value="Create" />
             </p>
-        </fieldset>
     }
 
-    <div>
+    <div class="button">
         @Html.ActionLink("Back to List", "Index")
     </div>
 </div>

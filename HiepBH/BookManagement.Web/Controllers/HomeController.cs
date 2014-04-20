@@ -5,19 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using BookManagement.Core.Models;
 using BookManagement.Core.Infrastructure;
+using System.Web.Security;
 
 namespace BookManagement.Web.Controllers
 {
     public class HomeController : Controller
     {
         private BookManagementDb db = new BookManagementDb();
+        private const int _numBooks = 10;
         public ActionResult Index(int categoryId = 0)
         {
             // Get all book
             if(categoryId == 0)
             {
                 ViewBag.Category = "All";
-                return View(db.Books.ToList());
+
+                var listBook = (from b in db.Books select b).OrderByDescending(book => book.Id).Take(_numBooks);
+                return View(listBook.ToList());
             }
             
             // Get book by id category
@@ -42,10 +46,8 @@ namespace BookManagement.Web.Controllers
             return PartialView(db.Categories.ToList());
         }
 
-        // Login
-        public PartialViewResult _LoginView()
-        {
-            return PartialView();
-        }
+
+        
+       
     }
 }

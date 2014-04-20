@@ -5,15 +5,14 @@
     ViewBag.Title = "Create";
     List<Category> categories = ViewBag.Categories as List<Category>; 
 }
+
 <div class="maincontent">
-    <h2>Create</h2>
+    <p class="title">New Book</p>
 
     @using (Html.BeginForm("Create", "Book", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.ValidationSummary(true)
-
-        <fieldset>
-            <legend>Book</legend>
+        <div class="divleft">
             <div class="editor-label">
                 @Html.LabelFor(model => model.Title)
             </div>
@@ -40,7 +39,7 @@
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.Price)
+                @Html.LabelFor(model => model.Price) ($)
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.Price)
@@ -48,32 +47,35 @@
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.PathImage)
+                @Html.Label("Image")
             </div>
             <div class="editor-field">
-                
-                
                 <input id="chooseImg" type="file" name="PathImage" />
-
                 @Html.ValidationMessageFor(model => model.PathImage)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Overview)
-            </div>
-            <div class="editor-field">
-                @Html.TextAreaFor(model => model.Overview)
-                @Html.ValidationMessageFor(model => model.Overview)
             </div>
 
             <p>
                 <input type="submit" value="Create" />
             </p>
-        </fieldset>
+
+            <div class="button">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    <div class="divright">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Overview)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Overview, new { id = "boxoverview" })
+            @Html.ValidationMessageFor(model => model.Overview)
+        </div>
+    </div>
+        
+        
+        
     }
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+
 </div>
 

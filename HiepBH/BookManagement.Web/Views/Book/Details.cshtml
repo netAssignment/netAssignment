@@ -4,48 +4,20 @@
     ViewBag.Title = "Details";
 }
 <div class="maincontent">
-    <h2>Details</h2>
+    <p class="title">Detail Book</p>
 
-    <fieldset>
-        <legend>Book</legend>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Title)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Title)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Author)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Author)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Price)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Price)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.Overview)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Overview)
-        </div>
-
-        <div class="display-label">
-            @Html.DisplayNameFor(model => model.PathImage)
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.PathImage)
-        </div>
-    </fieldset>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <section>
+        <img src="@Model.PathImage" alt="imagebook">
+        <header>
+            <p class="book_title">@Html.ActionLink(@Model.Title, "DetailBook", "Home", new { bookId = @Model.Id }, null)</p>
+            <p class="book_author">Category: @Model.Category.Name</p>
+            <p class="book_author">Author: @Model.Author</p>
+            <p class="book_price">Price: @Model.Price</p>
+        </header>
+        <p class="book_ov">@Model.Overview</p>
+        <p class="button">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </section>
 </div>
