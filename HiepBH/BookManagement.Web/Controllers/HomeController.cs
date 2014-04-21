@@ -35,6 +35,7 @@ namespace BookManagement.Web.Controllers
 
         public ActionResult DetailBook(int bookId = 0)
         {
+            ViewBag.LinkBook = "http://localhost/book/Home/DetailBook?bookId=" + bookId.ToString();
             Book book = db.Books.Where(b => b.Id == bookId).ToList()[0];
 
             return View(book);
@@ -46,7 +47,18 @@ namespace BookManagement.Web.Controllers
             return PartialView(db.Categories.ToList());
         }
 
+        public PartialViewResult _SearchBook()
+        {
+            return PartialView();
+        }
 
+        [HttpPost]
+        public ActionResult SearchBook(Book b)
+        {
+            List<Book> list = new List<Book>();
+            list = db.Books.Where(book => book.Title == b.Title).ToList();
+            return View(list);
+        }
         
        
     }

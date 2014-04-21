@@ -249,6 +249,8 @@
     <Content Include="Views\Home\_CategoriesView.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_nonAuLayout.cshtml" />
+    <Content Include="Views\Home\_SearchBook.cshtml" />
+    <Content Include="Views\Home\SearchBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\" />

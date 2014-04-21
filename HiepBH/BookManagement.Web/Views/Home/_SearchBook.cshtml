@@ -1,0 +1,21 @@
+﻿@model BookManagement.Core.Models.Book
+
+@{
+    ViewBag.Title = "_SearchBook";
+}
+
+
+@using (Html.BeginForm("SearchBook", "Home", FormMethod.Post, new{id="form_search"}))
+{
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Title)
+        @Html.ValidationMessageFor(model => model.Title)
+        <input type="submit" name="btnSearch" value="Search">
+    </div>   
+    
+}
+
+@*<form id="form_search">
+    <input type="search" name="" value="" placeholder="search book">
+    
+</form>*@

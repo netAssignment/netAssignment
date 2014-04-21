@@ -1,0 +1,15 @@
+﻿@model  IEnumerable<BookManagement.Core.Models.Book>
+
+@foreach (var item in Model)
+{
+    <section>
+        <img class="book_image" src="@Html.DisplayFor(modelItem => item.PathImage)">
+        <header>
+            <p class="book_title">@Html.ActionLink(item.Title, "DetailBook", "Home", new { bookId = item.Id }, null)</p>
+            <p class="book_author">Category: @item.Category.Name</p>
+            <p class="book_author">Author: @item.Author</p>
+            <p class="book_price">Price: @item.Price</p>
+        </header>
+        <p class="book_overview">@item.Overview</p>
+    </section>
+}

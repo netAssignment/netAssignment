@@ -16,10 +16,7 @@
 
         @Html.ActionLink("Logout", "Logout", "Account", null, new { id = "logout" })
 
-        <form id="form_search">
-            <input type="search" name="" value="" placeholder="search book">
-            <input type="submit" name="btnSearch" value="Search">
-        </form>
+        @{Html.RenderAction("_SearchBook", "Home");}
     </header>
 
     <div id="wrapper">

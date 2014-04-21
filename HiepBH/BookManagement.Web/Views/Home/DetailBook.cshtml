@@ -1,9 +1,18 @@
 ﻿@{
     ViewBag.Title = "DetailBook";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    if (Request.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_nonAuLayout.cshtml";
+    }
 }
 
 @model BookManagement.Core.Models.Book
+ 
 
     <section>
         <img src="@Model.PathImage">
@@ -14,7 +23,7 @@
             <p class="book_price">Price: @Model.Price</p>
         </header>
         <p class="book_ov">@Model.Overview</p>
+        <div class="fb-comments" data-href=@ViewBag.LinkBook data-colorscheme="light"
+             data-numposts="10" data-width="auto"></div>
     </section>
 
-    @*<div class="fb-comments" data-href="localhost:1064" data-colorscheme="light"
-         data-numposts="5" data-width="800"></div>*@

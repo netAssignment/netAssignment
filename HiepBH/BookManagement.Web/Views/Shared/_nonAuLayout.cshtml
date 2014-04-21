@@ -14,10 +14,7 @@
     <header id="header">
         <a href="Home/"><img id="logo" src="~/images/logo.jpg"></a>      
 
-        <form id="form_search">
-            <input type="search" name="" value="" placeholder="search book">
-            <input type="submit" name="btnSearch" value="Search">
-        </form>
+        @{Html.RenderAction("_SearchBook", "Home");}
     </header>
 
     <div id="wrapper">
